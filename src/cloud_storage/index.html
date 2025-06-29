@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIアバター対話・分析システム</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- 左側の会話パネル -->
+      <div class="conversation-panel">
+        <h1>Mimitalk</h1>
+        <div id="avatar" class="avatar">
+          <img
+            src="https://storage.googleapis.com/mimitalk-dev-hackathon/MimiTalkLogo.png"
+            alt="Avatar"
+          />
+        </div>
+        <div id="status" class="status">準備完了</div>
+
+        <!-- 操作ボタンエリア -->
+        <div class="button-container">
+          <button id="recordButton" class="record-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
+              />
+            </svg>
+            <span>こたえはじめる</span>
+          </button>
+          <!-- ▼▼▼ 診断レポート作成ボタンを再追加 ▼▼▼ -->
+          <button id="reportButton" class="report-button" disabled>
+            診断レポートを作成
+          </button>
+        </div>
+
+        <!-- ▼▼▼ 診断レポート表示エリアを再追加 ▼▼▼ -->
+        <div id="reportWrapper" class="report-wrapper" style="display: none">
+          <h2>最終診断レポート</h2>
+          <div id="reportResult" class="report-result"></div>
+        </div>
+      </div>
+
+      <!-- 右側のリアルタイム分析パネル -->
+      <div class="analysis-panel">
+        <h2>リアルタイム分析（デモ版）</h2>
+        <div class="meter-group">
+          <label>認知症リスク</label>
+          <div class="meter-value"><span id="riskValue">--</span> / 100</div>
+          <progress id="riskProgress" max="100" value="0"></progress>
+        </div>
+        <div class="meter-group">
+          <label>評価の信頼度</label>
+          <div class="meter-value">
+            <span id="confidenceValue">--</span> / 100
+          </div>
+          <progress id="confidenceProgress" max="100" value="0"></progress>
+        </div>
+        <div class="info-box">
+          <p>
+            会話の内容から認知機能の状態をリアルタイムで分析します。この結果は医学的診断に代わるものではありません。
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

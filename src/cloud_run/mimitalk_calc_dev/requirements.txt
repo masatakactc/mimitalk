@@ -1,0 +1,8 @@
+# Cloud Functionsの実行に必須のフレームワーク
+functions-framework==3.*
+
+# Vertex AI Agentと通信するために必要 (vertexaiライブラリ)
+google-cloud-aiplatform>=1.49.0
+
+# Firestoreデータベースから会話ログを読み込むために必要
+google-cloud-firestore

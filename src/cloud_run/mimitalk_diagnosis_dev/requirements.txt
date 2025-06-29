@@ -1,0 +1,8 @@
+# Cloud Functionsの基本的なフレームワーク
+functions-framework==3.*
+
+# Vertex AI Agent Engineと通信するために必要
+google-cloud-aiplatform
+
+# Firestoreデータベースから会話ログを読み込むために必要
+google-cloud-firestore
